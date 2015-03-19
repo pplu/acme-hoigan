@@ -1,4 +1,5 @@
 package Acme::HOIGAN;
+# ABSTRACT: convert text into HOIGAN!
 
 use strict;
 use warnings;
@@ -82,3 +83,35 @@ sub hoigan_word {
 }
 
 1;
+
+#################### main pod documentation begin ###################
+
+=head1 NAME
+Acme::HOIGAN - Convert text into HOIGAN!!!
+
+=head1 SYNOPSIS
+
+  use Acme::HOIGAN;
+  my $text = Acme::HOIGAN::HOIGAN('Un poco de texto')
+
+=head1 DESCRIPTION
+
+Convert text to authentic internet HOIGAN dialect.
+
+=head1 AUTHOR
+
+    Jose Luis Martinez
+    CPAN ID: JLMARTIN
+    CAPSiDE
+    jlmartinez@capside.com
+    http://www.pplusdomain.net
+
+=head1 COPYRIGHT
+
+Copyright (c) 2015 by Jose Luis Martinez Torres
+This program is free software; you can redistribute
+it and/or modify it under the same terms as Perl itself.
+The full text of the license can be found in the
+LICENSE file included with this module.
+
+=cut
