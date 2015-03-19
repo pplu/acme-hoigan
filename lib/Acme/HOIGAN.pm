@@ -4,6 +4,7 @@ package Acme::HOIGAN;
 use strict;
 use warnings;
 
+
 sub HOIGAN {
    my ($text) = @_;
 
@@ -17,7 +18,7 @@ sub HOIGAN {
    }
 
    # Eliminamos acentos
-   $text =~ tr/ÃÃ‰ÃÃ“ÃšÃ€ÃˆÃŒÃ’Ã™Ã¡Ã©Ã­Ã³ÃºÃ Ã¨Ã¬Ã²Ã¹Ã±/AEIOUAEIOUAEIOUAEIOUÃ‘/;
+   $text =~ tr/ÁÉÍÓÚÀÈÌÒÙáéíóúàèìòùñ/AEIOUAEIOUAEIOUAEIOUÑ/;
 
    # Causuistica chunga de haber, a ver, aver..
    $text =~ s/A VER/rand > 0.75 ?'HABER':'A VER'/ge;
@@ -63,14 +64,14 @@ sub hoigan_word {
      $word = "H$word";
   }
 
-  $word =~ s/Ã‘/(rand > 0.05)?'NI':(rand > 0.20)?'NY':'Ã‘'/;
+  $word =~ s/Ñ/(rand > 0.05)?'NI':(rand > 0.20)?'NY':'Ñ'/;
 
   $word =~ s/QU/(rand > 0.10)?'K':'QU'/ge;
   $word =~ s/C(A|O|U)/(rand > 0.10)?"K$1":"C$1"/ge;
   #cl suena a K
   $word =~ s/CL/K/g if (rand > 0.90);
 
-  # Letra ese, repetida, si es a final de palabra, con mÃ¡s probabilidad
+  # Letra ese, repetida, si es a final de palabra, con más probabilidad
   $word =~ s/([A-RT-Z])S/rand > 0.95 ? "$1S":$1 . ("S" x int(rand(2)+1))/ge;
   $word =~ s/S$/rand > 0.25 ? 'S':'S' x int(rand(3)+1)/ge;
 
@@ -111,7 +112,8 @@ Convert text to authentic internet HOIGAN dialect.
 Copyright (c) 2015 by Jose Luis Martinez Torres
 This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
-The full text of the license can be found in the
+the full text of the license can be found in the
 LICENSE file included with this module.
 
 =cut
+
